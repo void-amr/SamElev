@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SamataElev</string>
+    <string name="user_type_user_employee">User Type (user/employee)\n</string>
+    <string name="password">Enter password\n</string>
+    <string name="email">Enter Email\n</string>
+    <string name="register_a">Register\n</string>
+    <string name="email_login">Enter Email\n</string>
+    <string name="password_login">Enter password\n</string>
+    <string name="login_l">Login\n</string>
+    <string name="register">Register\n</string>
+    <string name="login">Login</string>
+</resources>

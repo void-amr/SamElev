@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "468533159799",
+    "project_id": "sapp-d3e93",
+    "storage_bucket": "sapp-d3e93.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468533159799:android:fb15d1ebe85c505b77a372",
+        "android_client_info": {
+          "package_name": "com.SE.SamElev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXKjY_pe-dT22Fav4qwnXdZ00pVFdZ47o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
