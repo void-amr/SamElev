@@ -11,4 +11,14 @@
     <string name="login">Login</string>
     <string name="user_type">User Type</string>
     <string name="delete">Delete</string>
+    <string name="title_activity_employee">EmployeeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Tasks</string>
+    <string name="menu_gallery">Announcements</string>
+    <string name="menu_slideshow">Attendance</string>
 </resources>

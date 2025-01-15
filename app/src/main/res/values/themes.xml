@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.SamataElev" parent="Base.Theme.SamataElev" />
+
+    <style name="Theme.SamataElev.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SamataElev.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SamataElev.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
