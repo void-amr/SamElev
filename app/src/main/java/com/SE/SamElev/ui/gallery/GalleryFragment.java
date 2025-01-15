@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.SE.SamElev.R;
 import com.SE.SamElev.databinding.FragmentGalleryBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -33,12 +34,12 @@ public class GalleryFragment extends Fragment {
         firestore = FirebaseFirestore.getInstance();
         ListView announcementsListView = binding.announcementsListView;
 
-        // Initialize the list and adapter
+        // Initialize the list and adapter with the custom layout
         announcementsList = new ArrayList<>();
         adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, announcementsList);
         announcementsListView.setAdapter(adapter);
 
-        // Fetch announcements
+        // Fetch announcements from Firestore
         fetchAnnouncements();
 
         return root;
