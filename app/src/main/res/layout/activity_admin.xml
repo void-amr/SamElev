@@ -7,4 +7,64 @@
     android:layout_height="match_parent"
     tools:context=".AdminActivity">
 
+    <Button
+        android:id="@+id/btnUser"
+        android:layout_width="150dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="168dp"
+        android:text="Update User"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnAttendance"
+        app:layout_constraintEnd_toStartOf="@+id/btnTasks"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnTasks"
+        android:layout_width="155dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/asap_semibold"
+        android:text="Tasks"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnAttendance"
+        android:layout_width="143dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="196dp"
+        android:text="Attendance"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAttendance"
+        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText,NotSibling" />
+
+    <Button
+        android:id="@+id/btnAnnounce"
+        android:layout_width="155dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="192dp"
+        android:text="Announce"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTasks"
+        app:layout_constraintVertical_bias="0.974"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -15,6 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SamataElev"
         tools:targetApi="31">
+
+        <activity android:name=".EmployeeActivity"/>
+        <activity
+            android:name=".addEmployee"
+            android:exported="false" />
+        <activity
+            android:name=".announce"
+            android:exported="false" />
+        <activity
+            android:name=".markAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".assignTasks"
+            android:exported="false" />
+        <activity
+            android:name=".updateUser"
+            android:exported="false" />
         <activity
             android:name=".AdminActivity"
             android:exported="false" />
@@ -34,6 +52,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

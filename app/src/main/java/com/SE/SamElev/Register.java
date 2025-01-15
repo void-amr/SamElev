@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Register extends AppCompatActivity {
-    private EditText editEmail, editPassword, editUserType;
+    private EditText editEmail, editPassword;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
 
@@ -30,7 +30,6 @@ public class Register extends AppCompatActivity {
         // Initialize UI components
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
-        editUserType = findViewById(R.id.editUserType);
         Button btnRegister = findViewById(R.id.btnRegister);
 
         // Initialize Firebase
@@ -44,7 +43,6 @@ public class Register extends AppCompatActivity {
     private void registerUser() {
         String email = editEmail.getText().toString().trim();
         String password = editPassword.getText().toString().trim();
-        String userType = editUserType.getText().toString().trim();
 
         // Validate inputs
         if (TextUtils.isEmpty(email)) {
@@ -59,10 +57,6 @@ public class Register extends AppCompatActivity {
             editPassword.setError("Password must be at least 6 characters");
             return;
         }
-        if (TextUtils.isEmpty(userType)) {
-            editUserType.setError("User Type is required");
-            return;
-        }
 
         // Register user in Firebase Authentication
         firebaseAuth.createUserWithEmailAndPassword(email, password)
@@ -72,29 +66,17 @@ public class Register extends AppCompatActivity {
                         String userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
                         Map<String, Object> userData = new HashMap<>();
                         userData.put("email", email);
-                        userData.put("userType", userType);
+                        userData.put("userType", "user");  // Set userType to "user" directly
 
                         firestore.collection("Users").document(userId).set(userData)
                                 .addOnSuccessListener(aVoid -> {
                                     Toast.makeText(Register.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                    navigateToNextActivity(userType); // Redirect based on user type
+                                    startActivity(new Intent(Register.this, UserActivity.class));
                                 })
                                 .addOnFailureListener(e -> Log.e("Firestore", "Error storing user data", e));
                     } else {
-                        Log.e("FirebaseAuth", "Registration failed", task.getException());;
+                        Log.e("FirebaseAuth", "Registration failed", task.getException());
                     }
                 });
-    }
-
-    private void navigateToNextActivity(String userType) {
-        if (userType.equalsIgnoreCase("employee")) {
-            startActivity(new Intent(Register.this, EmployeeActivity.class));
-        } else if (userType.equalsIgnoreCase("user")) {
-            startActivity(new Intent(Register.this, UserActivity.class));
-        }
-         else {
-            Toast.makeText(this, "Invalid user type", Toast.LENGTH_SHORT).show();
-        }
-        finish();
     }
 }

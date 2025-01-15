@@ -33,15 +33,6 @@
             android:autofillHints="Enter Password"
             android:hint="@string/password"
             android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/editUserType"
-            android:layout_width="373dp"
-            android:layout_height="70dp"
-            android:autofillHints="User Type (user/employee)"
-            android:hint="@string/user_type_user_employee"
-            android:inputType="text" />
-
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="281dp"

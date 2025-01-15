@@ -1,6 +1,8 @@
 package com.SE.SamElev;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AdminActivity extends AppCompatActivity {
-
+    Button btnUser, btnTasks, btnAttendance, btnAnnounce;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +22,27 @@ public class AdminActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        btnUser = findViewById(R.id.btnUser);
+        btnTasks = findViewById(R.id.btnTasks);
+        btnAttendance = findViewById(R.id.btnAttendance);
+        btnAnnounce = findViewById(R.id.btnAnnounce);
+
+        btnUser.setOnClickListener(v -> {
+            startActivity(new Intent(AdminActivity.this, updateUser.class));
+        });
+
+        btnTasks.setOnClickListener(v -> {
+            startActivity(new Intent(AdminActivity.this, assignTasks.class));
+        });
+
+        btnAttendance.setOnClickListener(v -> {
+            startActivity(new Intent(AdminActivity.this, markAttendance.class));
+        });
+
+        btnAnnounce.setOnClickListener(v -> {
+            startActivity(new Intent(AdminActivity.this, announce.class));
+        });
+
     }
 }

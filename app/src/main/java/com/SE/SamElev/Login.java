@@ -36,6 +36,7 @@ public class Login extends AppCompatActivity {
         // Handle Login
         btnLogin.setOnClickListener(v -> loginUser());
     }
+
     private void loginUser() {
         String email = editEmail.getText().toString().trim();
         String password = editPassword.getText().toString().trim();
@@ -56,7 +57,7 @@ public class Login extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         String userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
 
-                        // Retrieve user type from Firestore
+                        // Retrieve user type from Users collection
                         firestore.collection("Users").document(userId)
                                 .get()
                                 .addOnSuccessListener(documentSnapshot -> {
@@ -64,7 +65,20 @@ public class Login extends AppCompatActivity {
                                         String userType = documentSnapshot.getString("userType");
                                         navigateToNextActivity(userType); // Redirect based on user type
                                     } else {
-                                        Toast.makeText(Login.this, "User data not found in Firestore", Toast.LENGTH_SHORT).show();
+                                        // If not found in Users, check Employees collection
+                                        firestore.collection("Employees").document(userId)
+                                                .get()
+                                                .addOnSuccessListener(employeeSnapshot -> {
+                                                    if (employeeSnapshot.exists()) {
+                                                        navigateToNextActivity("employee"); // Treat as employee
+                                                    } else {
+                                                        Toast.makeText(Login.this, "User data not found in Firestore", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                })
+                                                .addOnFailureListener(e -> {
+                                                    Log.e("Firestore", "Error fetching employee data", e);
+                                                    Toast.makeText(Login.this, "Error fetching employee data", Toast.LENGTH_SHORT).show();
+                                                });
                                     }
                                 })
                                 .addOnFailureListener(e -> {
@@ -77,6 +91,7 @@ public class Login extends AppCompatActivity {
                     }
                 });
     }
+
     private void navigateToNextActivity(String userType) {
         if (userType == null) {
             Toast.makeText(this, "Invalid user type", Toast.LENGTH_SHORT).show();

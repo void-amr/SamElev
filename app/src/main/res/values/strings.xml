@@ -9,4 +9,6 @@
     <string name="login_l">Login\n</string>
     <string name="register">Register\n</string>
     <string name="login">Login</string>
+    <string name="user_type">User Type</string>
+    <string name="delete">Delete</string>
 </resources>
