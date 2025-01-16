@@ -34,4 +34,11 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Login.class)));
     }
 
+    @Override
+    public void onBackPressed() {
+        // Exits the app
+        super.onBackPressed();
+        finishAffinity();
+    }
+
 }

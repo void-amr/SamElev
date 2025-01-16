@@ -93,4 +93,11 @@ public class addEmployee extends AppCompatActivity {
                     }
                 });
     }
+    @Override
+    public void onBackPressed() {
+        // Exits the app
+        super.onBackPressed();
+        finishAffinity();
+
+    }
 }

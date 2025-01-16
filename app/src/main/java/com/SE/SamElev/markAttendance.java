@@ -21,4 +21,10 @@ public class markAttendance extends AppCompatActivity {
             return insets;
         });
     }
+    @Override
+    public void onBackPressed() {
+        // Exits the app
+        super.onBackPressed();
+        finishAffinity();
+    }
 }

@@ -63,4 +63,12 @@ public class EmployeeActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        finishAffinity();
+
+    }
+
 }

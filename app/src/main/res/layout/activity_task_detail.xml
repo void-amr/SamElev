@@ -1,0 +1,140 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Task Name -->
+        <TextView
+            android:id="@+id/taskNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Task Name:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/taskNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:text="Sample Task Name"
+            android:textSize="16sp"
+            android:textStyle="bold|italic" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
+            android:background="?android:attr/listDivider" />
+
+        <!-- Task Description -->
+        <TextView
+            android:id="@+id/taskDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Description:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/taskDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:text="Sample Task Description"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FF0000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Due Date -->
+        <TextView
+            android:id="@+id/dueDateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Due Date:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/dueDateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:text="01 Jan 2025"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Assigned To Email -->
+        <TextView
+            android:id="@+id/assignedEmailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assigned to Email:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/assignedEmailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:text="user@example.com"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Document URI -->
+        <TextView
+            android:id="@+id/documentUriLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Document URI:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/documentUriTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:text="http://example.com/document.pdf"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- PDF Viewer Label -->
+        <TextView
+            android:id="@+id/pdfLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Document Preview:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <!-- PdfRenderer -->
+        <SurfaceView
+            android:id="@+id/pdfRendererSurfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -43,6 +43,11 @@ public class AdminActivity extends AppCompatActivity {
         btnAnnounce.setOnClickListener(v -> {
             startActivity(new Intent(AdminActivity.this, announce.class));
         });
-
+    }
+    @Override
+    public void onBackPressed() {
+        // Exits the app
+        super.onBackPressed();
+        finishAffinity();
     }
 }

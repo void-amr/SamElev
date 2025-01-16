@@ -79,4 +79,10 @@ public class Register extends AppCompatActivity {
                     }
                 });
     }
+    @Override
+    public void onBackPressed() {
+        // Exits the app
+        super.onBackPressed();
+        finishAffinity();
+    }
 }
