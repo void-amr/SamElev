@@ -100,6 +100,7 @@
             android:layout_marginBottom="16dp" />
 
         <!-- Document URI -->
+
         <TextView
             android:id="@+id/documentUriLabel"
             android:layout_width="wrap_content"
@@ -120,21 +121,15 @@
             android:layout_marginBottom="16dp" />
 
         <!-- PDF Viewer Label -->
-        <TextView
-            android:id="@+id/pdfLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Document Preview:"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
 
         <!-- PdfRenderer -->
-        <SurfaceView
-            android:id="@+id/pdfRendererSurfaceView"
+
+        <Button
+            android:id="@+id/taskComplete"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_height="wrap_content"
+            android:text="Complete"
+            android:backgroundTint="#218825" />
 
     </LinearLayout>
 </ScrollView>

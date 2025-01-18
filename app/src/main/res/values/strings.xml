@@ -21,4 +21,15 @@
     <string name="menu_home">Tasks</string>
     <string name="menu_gallery">Announcements</string>
     <string name="menu_slideshow">Attendance</string>
+    <string name="sample_task_name">Sample Task Name</string>
+    <string name="task_description">Task Description:</string>
+    <string name="sample_task_description">Sample Task Description</string>
+    <string name="due_date">Due Date:</string>
+    <string name="_01_jan_2025">01 Jan 2025</string>
+    <string name="assigned_to_email">Assigned to Email:</string>
+    <string name="user_example_com">user@example.com</string>
+    <string name="document_uri">Document URI:</string>
+    <string name="http_example_com_document_pdf">http://example.com/document.pdf</string>
+    <string name="document_preview">Document Preview:</string>
+    <string name="task_name">Task Name:</string>
 </resources>

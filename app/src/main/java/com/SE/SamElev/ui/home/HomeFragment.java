@@ -76,12 +76,15 @@ public class HomeFragment extends Fragment {
 
                         // Set click listener for ListView items
                         taskListView.setOnItemClickListener((parent, view, position, id) -> {
-                            // Pass the task document ID to TaskDetailActivity
                             String taskId = taskIds.get(position);
+                            String documentUri = queryDocumentSnapshots.getDocuments().get(position).getString("documentUri"); // Get document URI
+
                             Intent intent = new Intent(getActivity(), TaskDetailActivity.class);
-                            intent.putExtra("TASK_ID", taskId); // Pass the task document ID
+                            intent.putExtra("TASK_ID", taskId);
+                            intent.putExtra("DOCUMENT_URI", documentUri); // Pass the document URI
                             startActivity(intent);
                         });
+
 
                     })
                     .addOnFailureListener(e -> {

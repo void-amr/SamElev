@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.Objects;
 
@@ -34,7 +35,34 @@ public class Login extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
 
         // Handle Login
-        btnLogin.setOnClickListener(v -> loginUser());
+        btnLogin.setOnClickListener(v ->{
+            loginUser();
+            FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(task -> {
+                        if (!task.isSuccessful()) {
+                            Log.w("FCM", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get the new FCM token
+                        String token = task.getResult();
+
+                        // Assuming you already have a user document with the email "admin123@gmail.com"
+                        String userEmail = "admin123@gmail.com"; // Use the actual email of the admin or user
+
+                        // Save the token to Firestore under the existing user's document
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        db.collection("Users").document(userEmail)  // Use the email as the document ID
+                                .update("fcmToken", token)  // Update or add the fcmToken field
+                                .addOnSuccessListener(aVoid -> {
+                                    Log.d("FCM", "Token saved to Firestore successfully for " + userEmail);
+                                })
+                                .addOnFailureListener(e -> {
+                                    Log.w("FCM", "Error saving token to Firestore for " + userEmail, e);
+                                });
+                    });
+
+        });
     }
 
     private void loginUser() {

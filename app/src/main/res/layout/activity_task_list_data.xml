@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Task Name -->
+    <TextView
+        android:id="@+id/task_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="start"
+        android:textColor="#000000"/>
+
+    <!-- Task Description -->
+    <TextView
+        android:id="@+id/task_description_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="start"
+        android:textColor="#000000"/>
+
+    <!-- Due Date -->
+    <TextView
+        android:id="@+id/due_date_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Due Date"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="start"
+        android:textColor="#000000"/>
+
+    <!-- Assigned Email -->
+    <TextView
+        android:id="@+id/assigned_email_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assigned Email"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"
+        android:gravity="start"
+        android:textColor="#000000"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete" />
+
+</LinearLayout>

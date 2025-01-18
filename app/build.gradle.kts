@@ -58,6 +58,5 @@ dependencies {
     implementation ("com.google.android.gms:play-services-auth:21.3.0")
     implementation ("com.google.firebase:firebase-firestore:24.1.0")  // Firebase Firestore dependency
     implementation ("com.google.firebase:firebase-auth:21.1.0")        // Firebase Authentication (if required)
-
-
+    implementation ("com.google.firebase:firebase-messaging:23.1.1")  // Firebase Messaging dependency
 }

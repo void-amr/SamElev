@@ -1,3 +1,4 @@
+
 package com.SE.SamElev;
 
 import android.content.Intent;
@@ -50,7 +51,10 @@ public class assignTasks extends AppCompatActivity {
             // Store data in Firestore
             storeDataInFirebase(taskNameText, taskDescriptionText, dueDate, assignedEmail);
         });
-
+        taskLogButton.setOnClickListener(v -> {
+            Intent intent = new Intent(assignTasks.this, TaskLists.class);
+            startActivity(intent);
+        });
         // Set click listener for Attach Documents button
         attachDocumentsButton.setOnClickListener(v -> openDocumentPicker());
     }
