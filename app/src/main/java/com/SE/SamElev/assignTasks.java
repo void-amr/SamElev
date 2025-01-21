@@ -23,7 +23,7 @@ import java.util.Map;
 public class assignTasks extends AppCompatActivity {
 
     private EditText taskName, taskDescription, dueDateField, assignEmailField;
-    private Button assignButton, taskLogButton, attachDocumentsButton;
+    private Button assignButton, taskLogButton, attachDocumentsButton, completedTasks;
     private static final int PICK_DOCUMENT_REQUEST = 1;
     private Uri documentUri = null; // Uri to hold the document
 
@@ -57,6 +57,14 @@ public class assignTasks extends AppCompatActivity {
         });
         // Set click listener for Attach Documents button
         attachDocumentsButton.setOnClickListener(v -> openDocumentPicker());
+
+        completedTasks = findViewById(R.id.viewComp);
+
+        completedTasks.setOnClickListener(v -> {
+            Intent intent = new Intent(assignTasks.this, completedActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     // Method to open document picker

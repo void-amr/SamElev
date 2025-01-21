@@ -4,40 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp">
+    android:background="#999292">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="420dp"
-        android:layout_height="690dp"
+        android:layout_width="425dp"
+        android:layout_height="710dp"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/editEmail"
             android:layout_width="373dp"
             android:layout_height="57dp"
             android:autofillHints="Enter Email"
+            android:background="@color/material_dynamic_tertiary99"
+            android:gravity="center"
             android:hint="@string/email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:textColorHint="#3B3737" />
 
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="373dp"
             android:layout_height="67dp"
+            android:layout_marginTop="20dp"
             android:autofillHints="Enter Password"
+            android:background="@color/material_dynamic_tertiary99"
+            android:gravity="center"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColorHint="#393535" />
+
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="281dp"
+            android:layout_width="274dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#082F54"
+            android:gravity="center|top"
             android:paddingTop="30dp"
             android:text="@string/register_a"
             android:textAlignment="center"

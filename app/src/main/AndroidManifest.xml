@@ -26,6 +26,18 @@
         android:theme="@style/Theme.SamataElev"
         tools:targetApi="31">
         <activity
+            android:name=".taskComp"
+            android:exported="false" />
+        <activity
+            android:name=".completedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adminAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceAdapter"
+            android:exported="false" />
+        <activity
             android:name=".TaskListData"
             android:exported="false" />
         <activity

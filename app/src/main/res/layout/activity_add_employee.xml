@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp">
+    android:background="#949191">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -24,32 +24,40 @@
             android:id="@+id/u_name"
             android:layout_width="373dp"
             android:layout_height="57dp"
+            android:layout_marginTop="16dp"
+            android:background="#827777"
+            android:backgroundTint="@color/material_dynamic_neutral100"
             android:hint="Enter Name"
             android:inputType="text"
-            android:layout_marginTop="16dp"
+            android:textColorHint="#342525"
             tools:ignore="HardcodedText,TextFields" />
 
         <EditText
             android:id="@+id/u_editEmail"
-            android:layout_width="373dp"
+            android:layout_width="375dp"
             android:layout_height="57dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/material_dynamic_neutral100"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:layout_marginTop="16dp" />
+            android:textColorHint="#342222" />
 
         <EditText
             android:id="@+id/u_editPassword"
             android:layout_width="373dp"
             android:layout_height="67dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/material_dynamic_neutral100"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:layout_marginTop="16dp" />
+            android:textColorHint="#371F1F" />
 
         <Button
             android:id="@+id/u_btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="88dp"
+            android:layout_width="337dp"
+            android:layout_height="67dp"
             android:layout_marginTop="24dp"
+            android:backgroundTint="#174B1A"
             android:text="Add User"
             android:textAlignment="center"
             android:textSize="14sp"

@@ -14,8 +14,6 @@
         android:text="Task Name"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:paddingBottom="8dp"
-        android:layout_marginBottom="16dp"
         android:gravity="start"
         android:textColor="#000000"/>
 
@@ -26,8 +24,6 @@
         android:layout_height="wrap_content"
         android:text="Description"
         android:textSize="16sp"
-        android:paddingBottom="8dp"
-        android:layout_marginBottom="16dp"
         android:gravity="start"
         android:textColor="#000000"/>
 
@@ -38,9 +34,6 @@
         android:layout_height="wrap_content"
         android:text="Due Date"
         android:textSize="16sp"
-        android:textStyle="italic"
-        android:paddingBottom="8dp"
-        android:layout_marginBottom="16dp"
         android:gravity="start"
         android:textColor="#000000"/>
 
@@ -51,15 +44,14 @@
         android:layout_height="wrap_content"
         android:text="Assigned Email"
         android:textSize="16sp"
-        android:paddingBottom="8dp"
         android:gravity="start"
         android:textColor="#000000"/>
 
+    <!-- Delete Button -->
     <Button
         android:id="@+id/delete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#590303"
         android:text="Delete" />
-
 </LinearLayout>
