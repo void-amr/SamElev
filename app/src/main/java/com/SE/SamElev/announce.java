@@ -63,7 +63,7 @@ public class announce extends AppCompatActivity {
             firestore.collection("Announcements").add(announcement)
                     .addOnSuccessListener(documentReference -> {
                         Toast.makeText(announce.this, "Announcement sent", Toast.LENGTH_SHORT).show();
-                        editText.setText(""); // Clear the input field
+                        editText.setText("");
                     })
                     .addOnFailureListener(e -> {
                         Toast.makeText(announce.this, "Failed to send announcement", Toast.LENGTH_SHORT).show();

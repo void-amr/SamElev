@@ -25,7 +25,7 @@ public class GalleryFragment extends Fragment {
 
     private FragmentGalleryBinding binding;
     private FirebaseFirestore firestore;
-    private ArrayList<String> taskList;
+    private ArrayList<String> announcementList;
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -39,49 +39,27 @@ public class GalleryFragment extends Fragment {
         ListView taskListView = binding.announcementsListView;
 
         // Initialize the list and adapter
-        taskList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, taskList);
+        announcementList = new ArrayList<>();
+        adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, announcementList);
         taskListView.setAdapter(adapter);
 
         // Fetch pending tasks from Firestore
-        fetchPendingTasks();
-
-        // Set up click listener to open task details
-        taskListView.setOnItemClickListener((parent, view, position, id) -> {
-            String taskName = taskList.get(position);
-
-            firestore.collection("tasks")
-                    .whereEqualTo("taskName", taskName)
-                    .get()
-                    .addOnSuccessListener(queryDocumentSnapshots -> {
-                        for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                            String taskId = document.getId();
-                            Intent intent = new Intent(requireContext(), TaskDetailActivity.class);
-                            intent.putExtra("TASK_ID", taskId);
-                            startActivity(intent);
-                        }
-                    })
-                    .addOnFailureListener(e -> Toast.makeText(requireContext(), "Failed to open task", Toast.LENGTH_SHORT).show());
-        });
+        fetchAnnoucements();
 
         return root;
     }
-
-    private void fetchPendingTasks() {
-        firestore.collection("tasks")
-                .whereEqualTo("status", "completed") //
+    private void fetchAnnoucements() {
+        firestore.collection("Announcements")
                 .addSnapshotListener((querySnapshot, e) -> {
                     if (e != null) {
-                        Toast.makeText(requireContext(), "Failed to load tasks", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext(), "Failed to announcements", Toast.LENGTH_SHORT).show();
                         return;
                     }
-
                     if (querySnapshot != null) {
-                        taskList.clear(); // Clear the list to avoid duplicates
                         for (QueryDocumentSnapshot document : querySnapshot) {
-                            String taskName = document.getString("taskName");
-                            if (taskName != null) {
-                                taskList.add(taskName); // Add task name to the list
+                            String an_message = document.getString("message");
+                            if (an_message != null) {
+                                announcementList.add(an_message);
                             }
                         }
                         adapter.notifyDataSetChanged(); // Notify the adapter of data changes

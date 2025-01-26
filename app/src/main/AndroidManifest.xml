@@ -26,6 +26,15 @@
         android:theme="@style/Theme.SamataElev"
         tools:targetApi="31">
         <activity
+            android:name=".inquiryAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".inquiryDetails"
+            android:exported="false" />
+        <activity
+            android:name=".inquiryUS"
+            android:exported="false" />
+        <activity
             android:name=".taskComp"
             android:exported="false" />
         <activity

@@ -2,6 +2,7 @@ package com.SE.SamElev;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -11,7 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class AdminActivity extends AppCompatActivity {
-    Button btnUser, btnTasks, btnAttendance, btnAnnounce;
+    Button btnUser, btnTasks, btnAttendance, btnAnnounce, btnInquiry;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,7 @@ public class AdminActivity extends AppCompatActivity {
         btnTasks = findViewById(R.id.btnTasks);
         btnAttendance = findViewById(R.id.btnAttendance);
         btnAnnounce = findViewById(R.id.btnAnnounce);
+        btnInquiry = findViewById(R.id.inquiryButton);
 
         btnUser.setOnClickListener(v -> {
             startActivity(new Intent(AdminActivity.this, updateUser.class));
@@ -43,6 +46,15 @@ public class AdminActivity extends AppCompatActivity {
         btnAnnounce.setOnClickListener(v -> {
             startActivity(new Intent(AdminActivity.this, announce.class));
         });
+
+        btnInquiry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(AdminActivity.this);
+            }
+        });
+
+
     }
     @Override
     public void onBackPressed() {

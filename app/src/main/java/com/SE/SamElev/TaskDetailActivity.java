@@ -44,39 +44,13 @@ public class TaskDetailActivity extends AppCompatActivity {
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(this, "Task marked as completed", Toast.LENGTH_SHORT).show();
 
-                        // Trigger a system notification for admin once the task is completed
-                        sendNotificationToAdmin(taskId);
-
                         finish(); // Close the activity to return to the previous screen
+
                     })
                     .addOnFailureListener(e -> Toast.makeText(this, "Failed to complete task", Toast.LENGTH_SHORT).show());
         });
 
 
-    }
-    private void sendNotificationToAdmin(String taskId) {
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-        if (notificationManager != null) {
-            // Create a notification channel (required for Android Oreo and above)
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                NotificationChannel channel = new NotificationChannel(
-                        "task_completion_channel",
-                        "Task Completion Notifications",
-                        NotificationManager.IMPORTANCE_DEFAULT
-                );
-                notificationManager.createNotificationChannel(channel);
-            }
-
-            // Build the notification
-            Notification notification = new Notification.Builder(this, "task_completion_channel")
-                    .setContentTitle("Task Completed")
-                    .setContentText("A user has completed their task (Task ID: " + taskId + ").")
-                    .build();
-
-            // Send the notification
-            notificationManager.notify(0, notification); // 0 is the notification ID
-        }
     }
     private void fetchTaskDetailsFromFirestore(String taskId) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();

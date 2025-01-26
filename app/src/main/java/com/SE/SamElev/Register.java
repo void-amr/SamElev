@@ -21,13 +21,11 @@ public class Register extends AppCompatActivity {
     private EditText editEmail, editPassword;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Initialize UI components
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
         Button btnRegister = findViewById(R.id.btnRegister);
@@ -57,12 +55,9 @@ public class Register extends AppCompatActivity {
             editPassword.setError("Password must be at least 6 characters");
             return;
         }
-
-        // Register user in Firebase Authentication
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        // Store additional data in Firestore
                         String userId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
                         Map<String, Object> userData = new HashMap<>();
                         userData.put("email", email);
@@ -78,6 +73,8 @@ public class Register extends AppCompatActivity {
                         Log.e("FirebaseAuth", "Registration failed", task.getException());
                     }
                 });
+
+        Intent startUseractivity = new Intent(this, UserActivity.class);
     }
     @Override
     public void onBackPressed() {

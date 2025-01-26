@@ -70,19 +70,18 @@ public class HomeFragment extends Fragment {
                                 taskIds.add(document.getId());  // Store document ID for future reference
                             }
                         }
-                        // Set the adapter to ListView
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, taskNames);
                         taskListView.setAdapter(adapter);
 
-                        // Set click listener for ListView items
                         taskListView.setOnItemClickListener((parent, view, position, id) -> {
                             String taskId = taskIds.get(position);
                             String documentUri = queryDocumentSnapshots.getDocuments().get(position).getString("documentUri"); // Get document URI
-
                             Intent intent = new Intent(getActivity(), TaskDetailActivity.class);
                             intent.putExtra("TASK_ID", taskId);
                             intent.putExtra("DOCUMENT_URI", documentUri); // Pass the document URI
                             startActivity(intent);
+                            taskNames.clear();
+                            adapter.notifyDataSetChanged();
                         });
 
 
