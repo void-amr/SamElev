@@ -50,7 +50,7 @@ public class AdminActivity extends AppCompatActivity {
         btnInquiry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(AdminActivity.this);
+                startActivity(new Intent(AdminActivity.this, inquiryDetails.class));
             }
         });
 
