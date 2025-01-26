@@ -12,9 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -110,7 +107,7 @@ public class assignTasks extends AppCompatActivity {
     public static class Task {
         public String taskName, taskDescription, dueDate, assignedEmail, documentUri;
 
-        public Task(String taskName, String taskDescription, String dueDate, String assignedEmail, String documentUri) {
+        public Task(String taskName, String taskDescription, String dueDate, String assignedEmail) {
             this.taskName = taskName;
             this.taskDescription = taskDescription;
             this.dueDate = dueDate;

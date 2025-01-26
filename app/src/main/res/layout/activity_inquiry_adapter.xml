@@ -7,4 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".inquiryAdapter">
 
+    <!-- Inquiry Details Display Section -->
+
+    <!-- Inquiry Data -->
+    <TextView
+        android:id="@+id/inquiryData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inquiry Data: "
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!-- Phone Number -->
+    <TextView
+        android:id="@+id/inquiryPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone: "
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/inquiryData"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/inquiryEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/inquiryPhone"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!-- Name of Request Sender -->
+    <TextView
+        android:id="@+id/inquiryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/inquiryEmail"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!-- Assign Button -->
+    <Button
+        android:id="@+id/assignButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="300dp"
+        android:text="Assign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inquiryName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

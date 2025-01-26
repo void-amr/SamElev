@@ -75,4 +75,5 @@ public class TaskDetailActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to fetch task details", Toast.LENGTH_SHORT).show());
     }
+
 }
